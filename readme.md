@@ -31,7 +31,7 @@ O prazo máximo para a conclusão do projeto é de 1 semana a partir do recebime
 ### Instruções
 1. Faça um fork [deste repositório](https://github.com/jun1orDev/ToDoApp) para o seu perfil do GitHub.
 2. Desenvolva o aplicativo utilizando os requisitos técnicos listados acima.
-3. Ao finalizar o projeto, abra um Pull Request neste repositório original a partir do seu fork.
+3. Ao finalizar o projeto, crie uma Brach com seu nome e abra um Pull Request neste repositório original a partir do seu fork.
 
 ### Dúvidas
 Em caso de dúvidas de sintaxe, utilização das ferramentas ou qualquer outra questão técnica, você pode utilizar o ChatGPT para obter ajuda e esclarecimentos.
