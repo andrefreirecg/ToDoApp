@@ -7,12 +7,11 @@ const jwt = require("jsonwebtoken");
 export const loginHashedUser = async (data) => {
     const user = await prisma.user.findUnique({ where: { email: data.email } });
     if (!user) {
-        throw new Error("User not found");
+        throw new Error("Dados incorretos", 401);
     }
     const passwordMatch = await compare(data.password, user.password);
-    console.log(data.password, user.password, passwordMatch);
     if (!passwordMatch) {
-        throw new Error("Invalid password");
+        throw new Error("Dados incorretos", 401);
     }
     const token = sign({ id: user.id }, process.env.JWT_SECRET);
     return { user, token };

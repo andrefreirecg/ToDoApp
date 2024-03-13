@@ -1,29 +1,16 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <RouterLink to="/">
-          Home
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/login">
-          Login
-        </RouterLink>
-      </li>
-    </ul>
-  </nav>
+  <AppNavigation />
   <RouterView />
 </template>
 
 <script>
-import { RouterView, RouterLink } from 'vue-router'
-
+import { RouterView } from 'vue-router'
+import AppNavigation from './components/Header/AppNavigation'
 export default {
   name: 'App',
   components: {
     RouterView,
-    RouterLink
+    AppNavigation
   }
 }
 </script>

@@ -29,6 +29,7 @@ module.exports = {
         "vue"
     ],
     "rules": {
-        "vue/multi-word-component-names": 0
+        "vue/multi-word-component-names": 0,
+		"vue/html-indent": 0,
     }
 }
