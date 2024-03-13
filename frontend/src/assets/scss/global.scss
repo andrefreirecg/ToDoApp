@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '/node_modules/flowbite-vue/dist/index.css';
+
+$mobile: 378px;
+$mobile-large: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$desktop-large: 1440px;
+$desktop-fhd: 1920px;
+
+$black: #000;
+$white: #fff;
+
+$ciano-green: #E9EFF6;
+$ciano: #0091B7;
+$gray: #969696;
+
