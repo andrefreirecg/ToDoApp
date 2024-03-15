@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunktodolist"]=self["webpackChunktodolist"]||[]).push([[937],{2498:function(n,t,r){r.r(t),r.d(t,{default:function(){return c}});var u=r(6768);function e(n,t){return(0,u.uX)(),(0,u.CE)("div",null," Tarefas ")}var s=r(1241);const a={},o=(0,s.A)(a,[["render",e]]);var c=o}}]);
+//# sourceMappingURL=Tarefas.2a47f5de.js.map

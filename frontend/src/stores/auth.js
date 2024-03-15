@@ -1,34 +1,87 @@
-import { defineStore } from 'pinia'
-import { ref } from 'vue'
-export const useAuthStore = defineStore('auth', () => {
-	const token = ref(localStorage.getItem('token') || '')
-	const user = ref(JSON.parse(localStorage.getItem('user')) || {})
-	function setToken(newToken) {
-		localStorage.setItem('token', newToken)
-		token.value = newToken
-	}
-	function setUser(newUser) {
-		localStorage.setItem('user', JSON.stringify(newUser))
-		user.value = newUser
-	}
-	function logout() {
-		localStorage.removeItem('token')
-		localStorage.removeItem('user')
-		token.value = ''
-		user.value = {}
-	}
-	function login(newToken, newUser) {
-		setToken(newToken)
-		setUser(newUser)
-	}
-	return {
-		token,
-		user,
-		setToken,
-		setUser,
-		logout,
-		login
-	}
-})
+import { jwtDecode } from 'jwt-decode';
+import axiosInstance from '@/services/http.js';
 
+const state = {
+	token: localStorage.getItem('token') || '',
+	user: JSON.parse(localStorage.getItem('user')) || {},
+};
 
+const mutations = {
+	setToken(state, newToken) {
+		localStorage.setItem('token', newToken);
+		state.token = newToken;
+	},
+	setUser(state, newUser) {
+		localStorage.setItem('user', JSON.stringify(newUser));
+		state.user = newUser;
+	},
+	logout(state) {
+		localStorage.removeItem('token');
+		localStorage.removeItem('user');
+		state.token = '';
+		state.user = {};
+	},
+	
+};
+
+const actions = {
+	async login({ commit }, userData) {
+		try {
+			const response = await axiosInstance.post('/auth/login', userData);
+			if (response.status === 200) {
+				const { token, user } = response.data;
+				const expirationDate = jwtDecode(token).exp;
+				const now = Math.floor(Date.now() / 1000);
+				const expiresIn = expirationDate - now;
+				commit('setToken', token);
+				commit('setUser', user);
+
+				setTimeout(() => {
+					commit('logout');
+				}, expiresIn * 1000);
+				return user;
+			}
+		} catch (error) {
+			console.error('Erro ao fazer login:', error);
+			throw error;
+		}
+	},
+	logout({ commit }) {
+		commit('logout');
+	},
+	async createAccount({ commit }, userData) {
+		try {
+			const response = await axiosInstance.post('/create-user', userData);
+			if (response.status === 201) {
+				const user  = response;
+				commit('setUser', user);
+				const login = await axiosInstance.post('/auth/login', {email: userData.email, password: userData.password});
+				const token = login.data.token;
+				commit('setToken', token);
+				return login;
+			}
+		} catch (error) {
+			console.error('Erro ao criar conta:', error);
+			throw error;
+		}
+	}
+};
+
+const getters = {
+	isLoggedIn(state) {
+		return state.token !== '';
+	},
+	getToken(state) {
+		return state.token;
+	},
+	getUser(state) {
+		return state.user;
+	}
+};
+
+export default {
+	state,
+	mutations,
+	actions,
+	getters
+};

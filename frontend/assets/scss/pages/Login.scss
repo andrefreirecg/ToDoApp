@@ -1,0 +1,13 @@
+#login{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	h1{
+		margin-bottom: 30px;
+	}
+	form{
+		gap: 20px;
+		padding: 20px;
+	}
+}

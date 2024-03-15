@@ -2,12 +2,13 @@ import prisma from "../services/prisma";
 import bcrypt from 'bcrypt';
 
 export const createUserHook = async (data) => {
-  const passHashed = await bcrypt.hash(data.password, 10);
+  const passHashed = await bcrypt.hash(data.password.value, 10);
   
   const user = await prisma.user.create({
     data: {
-      ...data,
-      password: passHashed,
+      email: data.email.value,
+      name: data.name.value,
+      password: passHashed
     },
   });
   return user;

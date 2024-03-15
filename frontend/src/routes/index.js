@@ -5,6 +5,7 @@ const routes = [
 	{ path: '/login', component: () => import(/* webpackChunkName: "Login" */ '@/views/Login.vue') },
 	{ path: '/tarefas', component: () => import(/* webpackChunkName: "Tarefas" */ '@/views/Tarefas.vue') },
 	{ path: '/minha-conta', component: () => import(/* webpackChunkName: "Minha-conta" */ '@/views/Minha-conta.vue') },
+	{ path: '/criar-conta', component: () => import(/* webpackChunkName: "Criar-conta" */ '@/views/Criar-conta.vue') },
 ]
 
 const router = createRouter({
@@ -14,7 +15,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-	const publicPages = ['/login'];
+	const publicPages = ['/login', '/criar-conta'];
 	const authRequired = !publicPages.includes(to.path);
 	const loggedIn = localStorage.getItem('token');
 

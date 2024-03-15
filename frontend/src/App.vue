@@ -16,5 +16,9 @@ export default {
 </script>
 
 <style lang="scss">
+	@font-face {
+		font-family: 'Space';
+		src: url('/public/fonts/SpaceGrotesk.ttf') format('truetype');
+	}
     @import './assets/scss/global';
 </style>

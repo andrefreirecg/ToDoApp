@@ -6,15 +6,13 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: rootpass
-      MARIADB_DATABASE: todolist
-      MARIADB_USER: todolist
-      MARIADB_PASSWORD: todolistpass
     ports:
       - 3308:3306
     expose:
       - 3306
     volumes:
       - ./api/db:/var/lib/mysql
+
 
   adminer:
     image: adminer
