@@ -9,6 +9,8 @@ COPY package*.json ./
 
 # Instala as dependências do projeto
 RUN yarn install
+RUN prisma db push
+RUN prisma generate
 
 # Copia o restante dos arquivos do projeto
 COPY . .

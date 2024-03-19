@@ -1,6 +1,7 @@
 import { createUserHook, getUserByIdHook, deleteUserByIdHook } from "../functions/user";
 
 export const createUser = async (req, res) => {
+  
   try {
     const user = await createUserHook(req.body);
     res.status(201).json(user);

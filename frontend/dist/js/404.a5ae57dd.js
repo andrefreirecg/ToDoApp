@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunktodolist"]=self["webpackChunktodolist"]||[]).push([[404],{1404:function(n,t,u){u.r(t),u.d(t,{default:function(){return l}});var e=u(6768);function r(n,t){return(0,e.uX)(),(0,e.CE)("h1",null," Home ")}var o=u(1241);const s={},c=(0,o.A)(s,[["render",r]]);var l=c}}]);
-//# sourceMappingURL=404.a5ae57dd.js.map

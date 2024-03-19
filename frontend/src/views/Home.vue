@@ -1,7 +1,11 @@
 <template>
   <h1>
-    {{ user.name }}
+    Bem vindo(a) {{ user.name }}
   </h1>
+  <div class="infos">
+	<p>Você possui x tarefas pendentes</p>
+	<p>Você possui x tarefas concluídas</p>
+  </div>
 </template>
 
 <script>
@@ -10,7 +14,7 @@ import { mapGetters } from 'vuex';
 import { useStore } from 'vuex';
 
 export default {
-	name: 'Home',
+	name: 'HomeView',
 	setup() {
 		const store = useStore();
 		const user = computed(() => store.getters.getUser);
@@ -27,5 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.infos{
+	max-width: 1024px;
+	margin: 0 auto;
+	
+}
 </style>

@@ -1,15 +1,16 @@
 import prisma from "../services/prisma";
-import bcrypt from 'bcrypt';
-
+import jwt from 'jsonwebtoken';
 export const createUserHook = async (data) => {
-  const passHashed = await bcrypt.hash(data.password.value, 10);
   
+  const passHashed = jwt.sign(data.password, process.env.JWT_SECRET);
+  let userData = {
+    email: data.email.value ?? data.email,
+    name: data.name.value ?? data.name,
+    password: passHashed
+  }
+  console.log(userData)
   const user = await prisma.user.create({
-    data: {
-      email: data.email.value,
-      name: data.name.value,
-      password: passHashed
-    },
+    data: userData,
   });
   return user;
 }

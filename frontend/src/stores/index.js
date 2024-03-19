@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import authModule from './auth.js';
-
+import taskModule from './tasks.js'
 const store = createStore({
 	state() {
 	
@@ -16,6 +16,7 @@ const store = createStore({
 	},
 	modules: {
 		auth: authModule,
+		tasks: taskModule
 	},
 })
 

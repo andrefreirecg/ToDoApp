@@ -1,6 +1,5 @@
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -8,34 +7,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        String   @id @default(uuid())
-  title     String
-  content   String
-  done      Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model PostDataUser {
-  id        String   @id @default(uuid())
-  title     String
-  content   String
-  done      Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-
-  @@index([userId], map: "PostDataUser_userId_fkey")
-}
-
 model User {
-  id        String         @id @default(uuid())
-  email     String         @unique
-  name      String
-  password  String
-  createdAt DateTime       @default(now())
-  updatedAt DateTime       @updatedAt
-  posts     PostDataUser[]
+  id        Int       @id @default(autoincrement())
+  email     String?   @unique(map: "email") @db.VarChar(255)
+  name      String?   @db.VarChar(255)
+  password  String?   @db.VarChar(255)
+  createdAt DateTime? @default(now()) @db.DateTime(0)
+  updatedAt DateTime? @default(now()) @db.DateTime(0)
+}
+
+model Task {
+  id        Int       @id @default(autoincrement())
+  title     String?   @db.VarChar(255)
+  done      Boolean?  @default(false)
+  createdAt DateTime? @default(now()) @db.DateTime(0)
+  updatedAt DateTime? @default(now()) @db.DateTime(0)
+  userId    String?      @db.VarChar(255)
+  urgency Int? @map("urgency") @db.Int
 }

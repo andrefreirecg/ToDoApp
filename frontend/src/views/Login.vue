@@ -27,7 +27,7 @@ import store from '@/stores';
 import Logo from '@/components/Header/Logo.vue';
 import { RouterLink } from 'vue-router';
 export default {
-	name: 'Login',
+	name: 'LoginView',
 	components: {
 		Logo,
 		RouterLink,
@@ -39,7 +39,7 @@ export default {
 					value: 'andrefreirecg@gmail.com',
 				},
 				password: {
-					value: 'exemplo',
+					value: '',
 				},
 			}
 		};

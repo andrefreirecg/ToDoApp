@@ -7,7 +7,7 @@
 <script>
 import { RouterLink } from 'vue-router';
 export default {
-	name: 'Logo',
+	name: 'LogoHeader',
 	components: {
 		RouterLink
 	},
