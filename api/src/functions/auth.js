@@ -12,10 +12,10 @@ export const loginHashedUser = async (data) => {
     const passwordMatch = jwt.verify(user.password, process.env.JWT_SECRET);
     
     if (!passwordMatch) {
-        throw new Error("Dados incorretos", 401);
+        throw new Error("Dados incorretos");
     }
     if (passwordMatch.value != data.password.value) {
-        throw new Error("Dados incorretos", 401);
+        throw new Error("Dados incorretos");
     }
     
     const expiration = new Date();
