@@ -37,3 +37,10 @@ O prazo máximo para a conclusão do projeto é de 1 semana a partir do recebime
 Em caso de dúvidas de sintaxe, utilização das ferramentas ou qualquer outra questão técnica, você pode utilizar o ChatGPT para obter ajuda e esclarecimentos.
 
 Boa sorte! Estamos ansiosos para ver o seu ToDoApp em ação! 👏🧑‍💻🚀
+
+## Build do projeto
+Após fazer o clone do repositório, basta acessar pelo terminal a pasta raiz e executar o seguinte comando
+```
+ docker-compose up -d
+
+```

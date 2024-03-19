@@ -26,6 +26,7 @@
 			</template>
 		</FwbNavbar>
 	</header>
+	<LoadingIndicator/>
 </template>
 
 <script>
@@ -33,6 +34,7 @@ import { RouterLink } from 'vue-router';
 import { useStore, mapGetters } from 'vuex';
 import Logo from './Logo'
 import { computed } from 'vue';
+import LoadingIndicator from '@/components/Utils/Load.vue'
 import {
 	FwbNavbar,
 	FwbNavbarCollapse,
@@ -49,7 +51,8 @@ export default {
 		FwbListGroup,
 		FwbListGroupItem,
 		RouterLink,
-		Logo
+		Logo,
+		LoadingIndicator
 	},
 	computed: {
 		...mapGetters(['isLoggedIn', 'getUser', 'getToken'])

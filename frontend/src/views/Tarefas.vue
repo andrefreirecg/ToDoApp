@@ -47,11 +47,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.allTasks{
-	max-width: 1024px;
-	margin: 0 auto;
-	display: flex;
-	gap: 1rem;
-	flex-wrap: wrap;
-}
+@import '../../assets/scss/pages/Tarefas';
+
 </style>

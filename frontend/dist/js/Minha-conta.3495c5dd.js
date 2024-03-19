@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunktodolist"]=self["webpackChunktodolist"]||[]).push([[190],{4890:function(n,t,u){u.r(t),u.d(t,{default:function(){return i}});var r=u(6768);const e=(0,r.Lk)("h1",null,"Minha conta",-1),o=[e];function c(n,t){return(0,r.uX)(),(0,r.CE)("div",null,o)}var l=u(1241);const s={},a=(0,l.A)(s,[["render",c]]);var i=a}}]);
-//# sourceMappingURL=Minha-conta.23e237f8.js.map
+//# sourceMappingURL=Minha-conta.3495c5dd.js.map

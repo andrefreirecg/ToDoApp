@@ -1,7 +1,7 @@
 <template>
 	<div id="login" >
 		<div
-			class="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 pt-4">
+			class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 pt-4">
 			<h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 				<Logo />
 			</h1>

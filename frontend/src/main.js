@@ -4,7 +4,7 @@ import App from '@/App.vue'
 import router from '@/routes/index.js'
 import '../assets/scss/global.scss'
 import '../assets/tailwind.css'
-
+import LoadingIndicator from '@/components/Utils/Load.vue'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSquareXmark, faFileCirclePlus, faPenToSquare, faSquare, faSquareCheck, faFilter, faArrowDownAZ, faArrowUpAZ, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -14,4 +14,5 @@ library.add(faSquareXmark, faFileCirclePlus, faPenToSquare, faSquare, faSquareCh
 createApp(App)
   .use(router)
   .use(store)
+  .component('LoadingIndicator', LoadingIndicator)
   .mount('#app')

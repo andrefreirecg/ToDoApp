@@ -1,0 +1,20 @@
+@import '../global';
+
+.allTasks{
+	max-width: 1024px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	>:first-child{
+		margin-top: 20px;
+	}
+	@media (min-width: $tablet) {
+		flex-direction: row;
+		>:first-child{
+			margin-top: 0;
+		}
+	}
+}

@@ -42,8 +42,13 @@ const actions = {
 				return user;
 			}
 		} catch (error) {
-			console.error('Erro ao fazer login:', error);
-			throw error;
+			commit('setResponseActive', true)
+			if(error.response.status === 401){
+				console.log('Usuário ou senha inválidos')
+				commit('setResponseMessage', 'Usuário ou senha inválidos')
+			}else{
+				commit('setResponseMessage', 'Erro ao fazer login')
+			}
 		}
 	},
 	logout({ commit }) {

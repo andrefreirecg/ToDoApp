@@ -2,7 +2,7 @@
 	<div id="criar-conta">
 			<div
 			class="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-			<h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+			<h1 class="mb-2 mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 				<Logo />
 			</h1>
 			<form @submit.prevent="AuthCreateAccount" class="flex flex-col">

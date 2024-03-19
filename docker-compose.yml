@@ -16,8 +16,6 @@ services:
     command: sh -c "cd ./api/ && yarn install  && yarn start"
     ports:
       - 3000:3000
-    depends_on:
-      - db
   
   frontend:
     image: node:20-alpine
